@@ -7,7 +7,9 @@ def reset():
     conn = get_conn()
     conn.executescript("""
         DROP TABLE IF EXISTS accounts;
+        DROP TABLE IF EXISTS processed_keys;
         CREATE TABLE accounts (id INTEGER PRIMARY KEY, balance INTEGER NOT NULL);
+        CREATE TABLE processed_keys (key TEXT PRIMARY KEY);
         INSERT INTO accounts (id, balance) VALUES (1, 1000);
     """)
     conn.commit()
