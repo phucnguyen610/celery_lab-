@@ -1,7 +1,7 @@
 import os
 from celery import Celery
 
-VISIBILITY_TIMEOUT = int(os.getenv("VISIBILITY_TIMEOUT", "3600"))
+VISIBILITY_TIMEOUT = int(os.getenv("VISIBILITY_TIMEOUT", "1000"))
 
 app = Celery(
     "lab",
