@@ -7,6 +7,10 @@ from db import get_conn
 
 
 @app.task(acks_late=True)
+def add(x, y):
+    time.sleep(15)
+    return x + y
+
 def charge(account_id, amount, idempotency_key):
     pid = os.getpid()
     print(f"[PID {pid}] BẮT ĐẦU charge key={idempotency_key}")
