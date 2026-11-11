@@ -74,7 +74,7 @@ class AlertOnFailure(Task):
     autoretry_for=(TransientError,),   # chỉ retry loại lỗi này
     retry_backoff=True,                # chờ tăng dần
     retry_backoff_max=60,              # trần thời gian chờ (giây)
-    retry_jitter=False,                # tắt trước, sau đó bật lên để so sánh
+    retry_jitter=True,                # tắt trước, sau đó bật lên để so sánh
     max_retries=4,
 )
 def call_api(self, mode):
